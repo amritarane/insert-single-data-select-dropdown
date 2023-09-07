@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select_display</title>
+</head>
+<body>
+    <center>
+        <h1>select_display</h1>
+        <h1>select topic name to display</h1>
+        <form method="POST">
+            {% csrf_token %} 
+            <label for="to">topic_name</label>
+            <select name="to" id="to" multiple>
+            {% for to in QSDO %}
+                <option value="{{to.topic_name}}" >{{to.topic_name}}</option>
+
+            {% endfor %}
+            </select><br><br>
+
+            <input type="submit" value="select_display">
+
+
+        </form>
+    </center>
+</body>
+</html>

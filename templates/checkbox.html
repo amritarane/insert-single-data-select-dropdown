@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <center>
+            <h1>select_display</h1>
+            <h1>select topic</h1>
+            <form method="POST" action="{% url 'select_display' %}">
+                {% csrf_token %} 
+                topic_name
+                {% for to in QSDO %}
+                <input type="checkbox" name="to" id="to" value={{to.topic_name}}> 
+                <label for="to">{{to.topic_name}}</label> <br><br>
+            
+                {% endfor %}
+    
+                <input type="submit" value="checkbox">
+    
+    
+            </form>
+        </center>
+        </form>
+    </center>
+</body>
+</html>
